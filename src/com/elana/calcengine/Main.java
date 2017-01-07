@@ -7,24 +7,15 @@ public class Main {
     public static void main(String[] args) {
 
         MathEquation[] equations = new MathEquation[4];
-        equations[0] = create(200.0d, 50.0d, 'a');
-        equations[1] = create(40.0d, 120.0d, 's');
-        equations[2] = create(320.0d, 10.0d, 'd');
-        equations[3] = create(50.0d, 90.0d, 'm');
+        equations[0] = new MathEquation('a', 200.0d, 50.0d);
+        equations[1] = new MathEquation('s', 40.0d, 120.0d);
+        equations[2] = new MathEquation('d', 320.0d, 10.0d);
+        equations[3] = new MathEquation('m', 50.0d, 90.0d);
 
         for (MathEquation equation: equations) {
             equation.execute();
             System.out.print("result = ");
             System.out.println(equation.getResult());
         }
-    }
-
-    public static MathEquation create(double leftVal, double rightVal, char opCode) {
-        MathEquation equation = new MathEquation();
-        equation.setLeftVal(leftVal);
-        equation.setRightVal(rightVal);
-        equation.setOpCode(opCode);
-
-        return equation;
     }
 }
